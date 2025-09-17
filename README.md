@@ -69,3 +69,9 @@ g++ -o p1 p1.cpp
 
 
 
+## Resultado de la p1
+
+![Visualización del resultado](p1.png)
+
+
+
