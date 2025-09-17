@@ -55,12 +55,30 @@ ListNode* findNode(ListNode* head, int value) {
 // Si intersectVal no se encuentra, las listas permanecen separadas   
 void connectLists(ListNode* listA, ListNode* listB, int intersectVal) {
     //TODO: implemente aqui
+    if (!listA || !listB) return;
+
+    ListNode* inter = findNode(listA, intersectVal);
+    if (!inter) return;
+
+    ListNode* tailB = listB;
+    while (tailB->next) tailB = tailB->next;
+    tailB->next = inter;
 }
 
 
 // TODO: implementar el algoritmo para encontrar la intersección de dos listas
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
     // TODO: implemente aqui
+    if (!headA || !headB) return nullptr;
+
+    ListNode* a = headA;
+    ListNode* b = headB;
+
+    while (a != b) {
+        a = (a ? a->next : headB);
+        b = (b ? b->next : headA);
+    }
+    if (a != nullptr) return a;
     return nullptr;
 }
 
